@@ -20,4 +20,10 @@ public void whenDepositAmount_thenBalanceIncreases() {
     account.deposit(500f);
     assertThat(account.getBalance(), is(1500f));
 }
+@Test
+public void whenDeposit_thenDepositCounterIncreases() {
+    Account account = new Account(1000f, 0.05f) {};
+    account.deposit(500f);
+    assertThat(account.getNumberOfDeposits(), is(1));
+}
 }
