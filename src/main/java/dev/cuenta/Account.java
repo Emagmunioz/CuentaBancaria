@@ -6,10 +6,13 @@ public abstract class Account {
     protected int numberOfDeposits;
     protected int numberOfWithdrawals;
 
-    public void withdraw(float amount) {
+   
+public void withdraw(float amount) {
+    if (amount <= balance) {
         balance -= amount;
         numberOfWithdrawals++;
     }
+}
     
     public int getNumberOfWithdrawals() {
         return numberOfWithdrawals;
@@ -38,4 +41,5 @@ public abstract class Account {
     public float getAnnualRate() {
         return annualRate;
     }
+    
 }
