@@ -58,5 +58,9 @@ public void withdraw(float amount) {
         numberOfDeposits = 0;
         numberOfWithdrawals = 0;
     }
+    public String print() {
+        return String.format("Balance: %.1f%nAnnual Rate: %.1f%%", 
+            balance, annualRate * 100);
+    }
     
 }
