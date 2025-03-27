@@ -33,4 +33,12 @@ public void whenWithdrawAmount_thenBalanceDecreases() {
     account.withdraw(500f);
     assertThat(account.getBalance(), is(500f));
 }
+
+@Test
+public void whenWithdrawExceedsBalance_thenNoChange() {
+    Account account = new Account(1000f, 0.05f) {};
+    account.withdraw(1500f);
+    assertThat(account.getBalance(), is(1000f));
+    assertThat(account.getNumberOfWithdrawals(), is(0));
+}
 }
