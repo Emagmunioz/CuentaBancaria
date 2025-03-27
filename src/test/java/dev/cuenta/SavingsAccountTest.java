@@ -29,4 +29,14 @@ public void whenWithdrawFromActiveAccount_thenBalanceDecreases() {
     account.withdraw(2000f);
     assertThat(account.getBalance(), is(8000f));
 }
+
+@Test
+public void whenManyWithdrawals_thenApplyExtraFees() {
+    SavingsAccount account = new SavingsAccount(20000f, 0.05f);
+    for (int i = 0; i < 6; i++) {
+        account.withdraw(1000f);
+    }
+    account.monthlyStatement();
+    assertThat(account.getBalance(), closeTo(20000-6000-2000, 0.1f)); // 6 retiros, 2 extra
+}
 }
