@@ -26,4 +26,11 @@ public void whenDeposit_thenDepositCounterIncreases() {
     account.deposit(500f);
     assertThat(account.getNumberOfDeposits(), is(1));
 }
+// Agregar a AccountTest.java
+@Test
+public void whenWithdrawAmount_thenBalanceDecreases() {
+    Account account = new Account(1000f, 0.05f) {};
+    account.withdraw(500f);
+    assertThat(account.getBalance(), is(500f));
+}
 }
