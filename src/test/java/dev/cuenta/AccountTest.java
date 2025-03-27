@@ -14,4 +14,10 @@ public void whenCreateAccount_thenAnnualRateIsSet() {
     Account account = new Account(1000f, 0.05f) {};
     assertThat(account.getAnnualRate(), is(0.05f));
 }
+@Test
+public void whenDepositAmount_thenBalanceIncreases() {
+    Account account = new Account(1000f, 0.05f) {};
+    account.deposit(500f);
+    assertThat(account.getBalance(), is(1500f));
+}
 }
