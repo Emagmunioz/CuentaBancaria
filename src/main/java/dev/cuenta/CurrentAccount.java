@@ -11,4 +11,16 @@ public class CurrentAccount extends Account {
     public float getOverdraft() {
         return overdraft;
     }
+   
+@Override
+public void withdraw(float amount) {
+    if (amount <= getBalance()) {
+        super.withdraw(amount);
+    } else {
+        overdraft += amount - getBalance();
+        setBalance(0);
+        setNumberOfWithdrawals(getNumberOfWithdrawals() + 1);
+    }
+    
+}
 }

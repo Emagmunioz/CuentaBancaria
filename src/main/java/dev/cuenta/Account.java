@@ -62,5 +62,7 @@ public void withdraw(float amount) {
         return String.format("Balance: %.1f%nAnnual Rate: %.1f%%", 
             balance, annualRate * 100);
     }
+
+    protected abstract void setBalance(float f);
     
 }

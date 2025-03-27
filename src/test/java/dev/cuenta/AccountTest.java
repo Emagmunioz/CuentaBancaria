@@ -26,7 +26,6 @@ public void whenDeposit_thenDepositCounterIncreases() {
     account.deposit(500f);
     assertThat(account.getNumberOfDeposits(), is(1));
 }
-// Agregar a AccountTest.java
 @Test
 public void whenWithdrawAmount_thenBalanceDecreases() {
     Account account = new Account(1000f, 0.05f) {};
@@ -61,6 +60,13 @@ public void whenPrint_thenReturnsAccountDetails() {
     String result = account.print();
     assertThat(result, containsString("Balance: 1000.0"));
     assertThat(result, containsString("Annual Rate: 5.0%"));
+}
+
+@Test
+public void whenSetBalance_thenBalanceChanges() {
+    Account account = new Account(1000f, 0.05f) {};
+    account.setBalance(500f);
+    assertThat((double)account.getBalance(), is(500.0));
 }
 
 }
