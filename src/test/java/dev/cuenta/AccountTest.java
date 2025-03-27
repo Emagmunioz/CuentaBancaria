@@ -47,5 +47,12 @@ public void whenCalculateInterest_thenBalanceIncreases() {
     account.calculateInterest();
     assertThat((double)account.getBalance(), closeTo(1010.0, 0.001));
 }
+@Test
+public void whenMonthlyStatement_thenAppliesFeeAndInterest() {
+    Account account = new Account(1000f, 0.12f) {};
+    account.setMonthlyFee(50f);
+    account.monthlyStatement();
+    assertThat(account.getBalance(), closeTo(959.5f, 0.1f)); // 1000-50=950 + 1% interest
+}
 
 }
