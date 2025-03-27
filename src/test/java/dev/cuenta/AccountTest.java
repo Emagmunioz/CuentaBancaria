@@ -52,7 +52,7 @@ public void whenMonthlyStatement_thenAppliesFeeAndInterest() {
     Account account = new Account(1000f, 0.12f) {};
     account.setMonthlyFee(50f);
     account.monthlyStatement();
-    assertThat(account.getBalance(), closeTo(959.5f, 0.1f)); // 1000-50=950 + 1% interest
+    assertThat((double)account.getBalance(), closeTo(959.5f, 0.1f)); // 1000-50=950 + 1% interest
 }
 
 }

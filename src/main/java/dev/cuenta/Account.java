@@ -5,7 +5,11 @@ public abstract class Account {
     protected float annualRate;
     protected int numberOfDeposits;
     protected int numberOfWithdrawals;
+    protected float monthlyFee;
 
+    public void setMonthlyFee(float fee) {
+        this.monthlyFee = fee;
+    }
    
 public void withdraw(float amount) {
     if (amount <= balance) {
@@ -46,6 +50,13 @@ public void withdraw(float amount) {
     
     public float getAnnualRate() {
         return annualRate;
+    }
+    public void monthlyStatement() {
+        balance -= monthlyFee;
+        calculateInterest();
+        monthlyFee = 0;
+        numberOfDeposits = 0;
+        numberOfWithdrawals = 0;
     }
     
 }
