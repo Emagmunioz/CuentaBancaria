@@ -41,11 +41,11 @@ public void whenWithdrawExceedsBalance_thenNoChange() {
     assertThat(account.getBalance(), is(1000f));
     assertThat(account.getNumberOfWithdrawals(), is(0));
 }
-// Agregar a AccountTest.java
 @Test
 public void whenCalculateInterest_thenBalanceIncreases() {
     Account account = new Account(1000f, 0.12f) {}; // 12% anual = 1% mensual
     account.calculateInterest();
-    assertThat(account.getBalance(), closeTo(1010f, 0.001f));
+    assertThat((double)account.getBalance(), closeTo(1010.0, 0.001));
 }
+
 }

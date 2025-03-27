@@ -32,6 +32,12 @@ public void withdraw(float amount) {
         this.annualRate = annualRate;
     }
 
+    public void calculateInterest() {
+
+        float monthlyRate = annualRate / 12;
+        balance += balance * monthlyRate;
+}
+
     
     
     public float getBalance() {
