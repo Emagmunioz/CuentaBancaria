@@ -38,10 +38,17 @@ public void deposit(float amount) {
                 }
             }
             
-            private void setNumberOfDeposits(int i) {
+ private void setNumberOfDeposits(int i) {
                
-                throw new UnsupportedOperationException("Unimplemented method 'setNumberOfDeposits'");
-            }
+     throw new UnsupportedOperationException("Unimplemented method 'setNumberOfDeposits'");    }
+  
+@Override
+public String print() {
+    return super.print() + String.format(
+        "%nOverdraft: %.1f%nTransactions: %d",
+        overdraft, getNumberOfDeposits() + getNumberOfWithdrawals()
+    );
+}         
 
 }
 
