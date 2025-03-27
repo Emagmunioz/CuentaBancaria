@@ -26,4 +26,13 @@ public void whenDepositWithOverdraft_thenReducesOverdraft() {
     assertThat(account.getBalance(), is(0f));
 }
 
+@Test
+public void whenPrintCurrentAccount_thenShowOverdraft() {
+    CurrentAccount account = new CurrentAccount(1000f, 0.05f);
+    account.withdraw(1200f);
+    String result = account.print();
+    assertThat(result, containsString("Overdraft: 200.0"));
+    assertThat(result, containsString("Transactions: 1"));
+}
+
 }
