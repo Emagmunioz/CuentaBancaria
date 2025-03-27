@@ -1,0 +1,69 @@
+# Ignora archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignora archivos generados por el IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+bin/
+*.swp
+*.swo
+
+# Ignora archivos generados por Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignora archivos generados durante el testing
+**/test-output/
+**/surefire-reports/
+**/failsafe-reports/
+**/surefire-reports/
+**/failsafe-reports/
+**/test-results/
+
+# Ignora archivos de logs
+*.log
+*.log.*
+
+# Ignora archivos generados por el usuario
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Ignora archivos de configuración local
+*.properties
+*.cfg
+*.config
+
+# Ignora archivos de base de datos
+*.db
+*.sql
+*.h2.db
+
+# Ignora archivos de documentación generada
+**/javadoc/
+**/apidocs/
+
+# Ignora archivos temporales
+*.tmp
+*.bak
+*.old
+*.orig
+*.rej
