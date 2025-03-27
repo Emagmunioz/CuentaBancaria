@@ -31,4 +31,12 @@ public void monthlyStatement() {
     active = getBalance() >= 10000;
 }
 
+@Override
+public String print() {
+    return super.print() + String.format(
+        "%nActive: %b%nDeposits: %d%nWithdrawals: %d",
+        active, getNumberOfDeposits(), getNumberOfWithdrawals()
+    );
+}
+
 }
