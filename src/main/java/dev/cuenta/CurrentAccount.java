@@ -23,5 +23,25 @@ public void withdraw(float amount) {
     }
 }
 
+@Override
+public void deposit(float amount) {
+    if (overdraft > 0) {
+        if (amount <= overdraft) {
+            overdraft -= amount;
+        } else {
+            setBalance(amount - overdraft);
+            overdraft = 0;
+            setNumberOfDeposits(getNumberOfDeposits() + 1);
+                    }
+                } else {
+                    super.deposit(amount);
+                }
+            }
+            
+            private void setNumberOfDeposits(int i) {
+               
+                throw new UnsupportedOperationException("Unimplemented method 'setNumberOfDeposits'");
+            }
+
 }
 

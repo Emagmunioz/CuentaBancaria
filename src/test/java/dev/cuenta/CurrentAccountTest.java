@@ -20,7 +20,7 @@ public void whenWithdrawBeyondBalance_thenOverdraftIncreases() {
 @Test
 public void whenDepositWithOverdraft_thenReducesOverdraft() {
     CurrentAccount account = new CurrentAccount(1000f, 0.05f);
-    account.withdraw(1500f); // sobregiro de 500
+    account.withdraw(1500f);
     account.deposit(300f);
     assertThat(account.getOverdraft(), is(200f));
     assertThat(account.getBalance(), is(0f));
