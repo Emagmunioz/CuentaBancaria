@@ -23,4 +23,10 @@ public void whenDepositInInactiveAccount_thenNoChange() {
     account.deposit(500f);
     assertThat(account.getBalance(), is(9999f));
 }  
+@Test
+public void whenWithdrawFromActiveAccount_thenBalanceDecreases() {
+    SavingsAccount account = new SavingsAccount(10000f, 0.05f);
+    account.withdraw(2000f);
+    assertThat(account.getBalance(), is(8000f));
+}
 }
