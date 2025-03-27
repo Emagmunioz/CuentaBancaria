@@ -39,4 +39,11 @@ public void whenManyWithdrawals_thenApplyExtraFees() {
     account.monthlyStatement();
     assertThat((double)account.getBalance(), closeTo(20000-6000-2000, 0.1f)); // 6 retiros, 2 extra
 }
+@Test
+public void whenPrintSavingsAccount_thenShowActiveStatus() {
+    SavingsAccount account = new SavingsAccount(10000f, 0.05f);
+    String result = account.print();
+    assertThat(result, containsString("Active: true"));
+    assertThat(result, containsString("Deposits: 0"));
+}
 }
