@@ -9,4 +9,11 @@ public class SavingsAccountTest {
         SavingsAccount account = new SavingsAccount(10000f, 0.05f);
         assertThat(account.isActive(), is(true));
     }
+
+@Test
+public void whenDepositInActiveAccount_thenBalanceIncreases() {
+    SavingsAccount account = new SavingsAccount(10000f, 0.05f);
+    account.deposit(500f);
+    assertThat(account.getBalance(), is(10500f));
+}   
 }
