@@ -10,5 +10,11 @@ public class SavingsAccount extends Account{
     public boolean isActive() {
         return active;
     }
+@Override
+public void deposit(float amount) {
+    if (active) {
+        super.deposit(amount);
+    }
+}
 
 }
