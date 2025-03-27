@@ -15,5 +15,12 @@ public void whenDepositInActiveAccount_thenBalanceIncreases() {
     SavingsAccount account = new SavingsAccount(10000f, 0.05f);
     account.deposit(500f);
     assertThat(account.getBalance(), is(10500f));
-}   
+} 
+
+@Test
+public void whenDepositInInactiveAccount_thenNoChange() {
+    SavingsAccount account = new SavingsAccount(9999f, 0.05f);
+    account.deposit(500f);
+    assertThat(account.getBalance(), is(9999f));
+}  
 }
