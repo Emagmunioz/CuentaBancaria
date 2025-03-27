@@ -43,7 +43,7 @@ public void whenWithdrawExceedsBalance_thenNoChange() {
 }
 @Test
 public void whenCalculateInterest_thenBalanceIncreases() {
-    Account account = new Account(1000f, 0.12f) {}; // 12% anual = 1% mensual
+    Account account = new Account(1000f, 0.12f) {}; 
     account.calculateInterest();
     assertThat((double)account.getBalance(), closeTo(1010.0, 0.001));
 }
