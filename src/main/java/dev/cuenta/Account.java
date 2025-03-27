@@ -63,6 +63,13 @@ public void withdraw(float amount) {
             balance, annualRate * 100);
     }
 
-    protected abstract void setBalance(float f);
+   
+public void setBalance(float balance) {
+    this.balance = balance;
+}
+
+public void setNumberOfWithdrawals(int numberOfWithdrawals) {
+    this.numberOfWithdrawals = numberOfWithdrawals;
+}
     
 }
