@@ -22,5 +22,13 @@ public void withdraw(float amount) {
         super.withdraw(amount);
     }
 }
+@Override
+public void monthlyStatement() {
+    if (getNumberOfWithdrawals() > 4) {
+        setMonthlyFee((getNumberOfWithdrawals() - 4) * 1000f);
+    }
+    super.monthlyStatement();
+    active = getBalance() >= 10000;
+}
 
 }

@@ -37,6 +37,6 @@ public void whenManyWithdrawals_thenApplyExtraFees() {
         account.withdraw(1000f);
     }
     account.monthlyStatement();
-    assertThat(account.getBalance(), closeTo(20000-6000-2000, 0.1f)); // 6 retiros, 2 extra
+    assertThat((double)account.getBalance(), closeTo(20000-6000-2000, 0.1f)); // 6 retiros, 2 extra
 }
 }
