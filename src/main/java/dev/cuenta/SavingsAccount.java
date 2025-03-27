@@ -16,5 +16,11 @@ public void deposit(float amount) {
         super.deposit(amount);
     }
 }
+@Override
+public void withdraw(float amount) {
+    if (active && amount <= getBalance()) {
+        super.withdraw(amount);
+    }
+}
 
 }
